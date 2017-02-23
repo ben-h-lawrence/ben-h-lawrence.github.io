@@ -12,7 +12,7 @@ task :deploy do
     system "git init ."
     # system "git remote add origin git@github.com:ben-h-lawrence/ben-h-lawrence.github.io.git"
     system "git remote add origin https://github.com/ben-h-lawrence/ben-h-lawrence.github.io.git"
-    system "git checkout --orphan gh-pages"
+    system "git checkout --orphan master"
   end
 
   # do build

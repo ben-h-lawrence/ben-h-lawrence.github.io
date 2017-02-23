@@ -26,6 +26,12 @@ end
 ###
 # Helpers
 ###
+helpers do
+  def blog_posts
+    blogs = sitemap.resources.select {|p| p.source_file.include? '/blog'}
+    return blogs.sort_by { |page| page.data[:date] }.reverse
+  end
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -33,6 +39,8 @@ end
 #     "Helping"
 #   end
 # end
+
+activate :syntax
 
 # Build-specific configuration
 configure :build do

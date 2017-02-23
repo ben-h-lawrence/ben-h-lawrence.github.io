@@ -4,3 +4,13 @@ title: Welcome to Middleman
 
 <h1>Ben Lawrence</h1>
 <%= tag :img, :src => "images/sb.png" %>
+
+<% blog_posts.each do |page| %>
+
+<article>
+    <h2><%= link_to page.data.title, page.url %></h2>
+    <p class="date"><%= page.data.date %></p>
+    <p><%= page.data.summary %></p>
+</article>
+
+<% end %>
